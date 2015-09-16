@@ -1,0 +1,14 @@
+how to blastp:
+
+makeblastdb -in worm_mart_export.fa -dbtype prot -parse_seqids -hash_index -out worm_mart_export 
+   87  blastp -query uniprot-ec%3A-+AND+reviewed%3Ayes.fasta -db worm_mart_export -out ../Results/alluniprot.blasted -outfmt 7 -evalue 5e-2 -num_threads 5
+  107  ./1_filter_blast_results_dictionary.pl ../Data/uniprot_EC_dictionary.txt ../Results/blasted_query_gene.txt 
+
+
+
+Requires perl module LWP::Simple for downloading enzime infromation from KEGG database
+Require a working BLAST+ installation and the path of the directory containing the blast executable programs must be added to the PATH environment variable. 
+Also a formatbd formated database of a fasta file of all protein sequences of the organism of interest is needed and similarity matrix of the genes of interest computed using expression data.
+
+Usage:
+Run the scripts in the provided order (as described in the paper), first the scripts in the Metabolic_network directory and later the scripts in the Blast_Gold_standard directory (see README uder each directory for detailed information).

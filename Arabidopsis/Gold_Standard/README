@@ -1,0 +1,5 @@
+ec2go file downloaded from GO mappings:
+http://geneontology.org/page/download-mappings
+
+arabidopsis gene annotations downloaded from ensemblPlant 
+using biomaRt bioconductor package
